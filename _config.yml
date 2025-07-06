@@ -3,14 +3,14 @@ title                    : "Rowan's Blog"
 title_separator          : "-"
 subtitle                 : "记录想法、观察世界与自我成长"
 name                     : "Rowan"
-description              : "记录想法、观察世界与自我成长"
-url                      : "https://loverose0211.github.io"  # 替换为你的实际URL
+description              : "CS和自动化爱好者的成长记录"
+url                      : "https://loverose0211.github.io"
 baseurl                  : ""
-repository               : "loverose0211/loverose0211.github.io"  # 替换为你的实际仓库
+repository               : "loverose0211/loverose0211.github.io"
 
 # Theme Settings
 remote_theme             : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default"
+minimal_mistakes_skin    : "contrast"  # 使用对比度更好的主题
 
 # Plugins
 plugins:
@@ -23,14 +23,13 @@ plugins:
 # Site Author
 author:
   name             : "Rowan"
-  avatar           : # "/assets/images/bio-photo.jpg"  # 如果没有头像就注释掉
+  avatar           : # "/assets/images/bio-photo.jpg"
   bio              : "一个CS和自动化的爱好者"
   location         : "Somewhere"
-  email            :
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/loverose0211"  # 替换为你的GitHub链接
+      url: "https://github.com/loverose0211"
 
 # Reading Files
 include:
@@ -44,20 +43,8 @@ exclude:
   - .bundle
   - .jekyll-assets-cache
   - .sass-cache
-  - assets/js/plugins
-  - assets/js/_main.js
-  - assets/js/vendor
-  - Capfile
-  - CHANGELOG
-  - config
-  - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - log
   - node_modules
   - package.json
-  - package-lock.json
   - Rakefile
   - README
   - tmp
@@ -79,10 +66,23 @@ kramdown:
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
 
 # Outputting
 permalink: /:categories/:title/
-timezone: Asia/Shanghai  # 设置为中国时区
+timezone: Asia/Shanghai
 
 # Pagination
 paginate: 5
@@ -95,6 +95,14 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+# Search
+search: true
+search_full_content: true
+
+# Comments (可选)
+comments:
+  provider: false
 
 # Defaults
 defaults:
@@ -109,6 +117,10 @@ defaults:
       comments: false
       share: true
       related: true
+      show_date: true
+      toc: true
+      toc_label: "目录"
+      toc_icon: "cog"
   # _pages
   - scope:
       path: ""
@@ -116,3 +128,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+
+# 中文字体优化
+typography:
+  font_family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif
