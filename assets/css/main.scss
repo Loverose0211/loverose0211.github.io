@@ -1,0 +1,252 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/* 自定义样式 */
+
+/* 1. 改善中文字体显示 */
+body {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* 2. 优化主页文章列表 */
+.archive {
+  .list__item {
+    margin-bottom: 2em;
+    padding: 1.5em;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+  }
+  
+  .archive__item-title {
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+    
+    a {
+      color: #2c3e50;
+      text-decoration: none;
+      
+      &:hover {
+        color: #3498db;
+      }
+    }
+  }
+  
+  .archive__item-excerpt {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 1em;
+    line-height: 1.6;
+  }
+  
+  .archive__item-teaser {
+    margin-bottom: 1em;
+  }
+}
+
+/* 3. 优化文章页面布局 */
+.single {
+  .page__title {
+    font-size: 2.2em;
+    line-height: 1.3;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  .page__meta {
+    text-align: center;
+    margin-bottom: 2em;
+    color: #7f8c8d;
+    font-size: 0.9em;
+  }
+  
+  .page__content {
+    max-width: 100%;
+    margin: 0 auto;
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: #2c3e50;
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+    
+    h2 {
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 0.5em;
+    }
+    
+    p {
+      margin-bottom: 1.5em;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    
+    blockquote {
+      border-left: 4px solid #3498db;
+      padding-left: 1.5em;
+      margin: 1.5em 0;
+      background: #f8f9fa;
+      padding: 1em 1.5em;
+      border-radius: 0 4px 4px 0;
+      
+      p {
+        margin-bottom: 0;
+        font-style: italic;
+        color: #555;
+      }
+    }
+  }
+}
+
+/* 4. 大幅改善代码块样式 */
+.highlight {
+  margin: 1.5em 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  
+  pre {
+    margin: 0;
+    padding: 1.5em;
+    background: #2d3748 !important;
+    color: #e2e8f0 !important;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    line-height: 1.6;
+    overflow-x: auto;
+    border-radius: 8px;
+    
+    code {
+      background: transparent !important;
+      padding: 0;
+      font-family: inherit;
+      color: inherit;
+    }
+  }
+}
+
+/* 行内代码样式 */
+code {
+  background: #f1f3f4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #d73a49;
+  border: 1px solid #e1e4e8;
+}
+
+/* 代码块语法高亮 */
+.highlight {
+  .c { color: #6a737d; } /* Comment */
+  .k { color: #d73a49; } /* Keyword */
+  .o { color: #d73a49; } /* Operator */
+  .cm { color: #6a737d; } /* Comment.Multiline */
+  .cp { color: #d73a49; } /* Comment.Preproc */
+  .c1 { color: #6a737d; } /* Comment.Single */
+  .cs { color: #6a737d; } /* Comment.Special */
+  .gd { color: #d73a49; background-color: #ffeef0; } /* Generic.Deleted */
+  .ge { font-style: italic; } /* Generic.Emph */
+  .gh { color: #005cc5; font-weight: bold; } /* Generic.Heading */
+  .gi { color: #28a745; background-color: #f0fff4; } /* Generic.Inserted */
+  .go { color: #6a737d; } /* Generic.Output */
+  .gp { color: #005cc5; } /* Generic.Prompt */
+  .gs { font-weight: bold; } /* Generic.Strong */
+  .gu { color: #6f42c1; font-weight: bold; } /* Generic.Subheading */
+  .kc { color: #005cc5; } /* Keyword.Constant */
+  .kd { color: #d73a49; } /* Keyword.Declaration */
+  .kn { color: #d73a49; } /* Keyword.Namespace */
+  .kp { color: #d73a49; } /* Keyword.Pseudo */
+  .kr { color: #d73a49; } /* Keyword.Reserved */
+  .kt { color: #d73a49; } /* Keyword.Type */
+  .m { color: #005cc5; } /* Literal.Number */
+  .s { color: #032f62; } /* Literal.String */
+  .na { color: #6f42c1; } /* Name.Attribute */
+  .nb { color: #005cc5; } /* Name.Builtin */
+  .nc { color: #6f42c1; } /* Name.Class */
+  .no { color: #005cc5; } /* Name.Constant */
+  .nd { color: #6f42c1; } /* Name.Decorator */
+  .ni { color: #005cc5; } /* Name.Entity */
+  .ne { color: #6f42c1; } /* Name.Exception */
+  .nf { color: #6f42c1; } /* Name.Function */
+  .nl { color: #6f42c1; } /* Name.Label */
+  .nn { color: #6f42c1; } /* Name.Namespace */
+  .nt { color: #22863a; } /* Name.Tag */
+  .nv { color: #e36209; } /* Name.Variable */
+  .ow { color: #d73a49; } /* Operator.Word */
+  .w { color: #6a737d; } /* Text.Whitespace */
+  .mf { color: #005cc5; } /* Literal.Number.Float */
+  .mh { color: #005cc5; } /* Literal.Number.Hex */
+  .mi { color: #005cc5; } /* Literal.Number.Integer */
+  .mo { color: #005cc5; } /* Literal.Number.Oct */
+  .sb { color: #032f62; } /* Literal.String.Backtick */
+  .sc { color: #032f62; } /* Literal.String.Char */
+  .sd { color: #032f62; } /* Literal.String.Doc */
+  .s2 { color: #032f62; } /* Literal.String.Double */
+  .se { color: #032f62; } /* Literal.String.Escape */
+  .sh { color: #032f62; } /* Literal.String.Heredoc */
+  .si { color: #005cc5; } /* Literal.String.Interpol */
+  .sx { color: #032f62; } /* Literal.String.Other */
+  .sr { color: #032f62; } /* Literal.String.Regex */
+  .s1 { color: #032f62; } /* Literal.String.Single */
+  .ss { color: #005cc5; } /* Literal.String.Symbol */
+  .bp { color: #005cc5; } /* Name.Builtin.Pseudo */
+  .vc { color: #e36209; } /* Name.Variable.Class */
+  .vg { color: #e36209; } /* Name.Variable.Global */
+  .vi { color: #e36209; } /* Name.Variable.Instance */
+  .il { color: #005cc5; } /* Literal.Number.Integer.Long */
+}
+
+/* 5. 优化首页布局 */
+.home {
+  .page__title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    color: #2c3e50;
+  }
+  
+  .page__lead {
+    text-align: center;
+    font-size: 1.2em;
+    color: #7f8c8d;
+    margin-bottom: 2em;
+  }
+}
+
+/* 6. 响应式设计 */
+@media (max-width: 768px) {
+  .single .page__title {
+    font-size: 1.8em;
+  }
+  
+  .home .page__title {
+    font-size: 2em;
+  }
+  
+  .archive .list__item {
+    margin-bottom: 1.5em;
+    padding: 1em;
+  }
+  
+  .highlight pre {
+    font-size: 0.8em;
+    padding: 1em;
+  }
+}
