@@ -1,0 +1,15 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+body {
+  font-size: 18px;
+  line-height: 1.75;
+  max-width: 700px;
+  margin: auto;
+  color: #333;
+}
+h1, h2, h3 {
+  line-height: 1.3;
+}
