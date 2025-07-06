@@ -1,30 +1,10 @@
 ---
-layout: default
-title: 首页
+layout: home
+author_profile: true
 ---
 
-<div class="home">
-    <header class="site-header">
-        <h1>记录想法，观察世界与自我成长</h1>
-        <p class="subtitle">一个正在学习CS和自动化的社会人士的思考记录</p>
-    </header>
-    
-    <main class="content">
-        <h2>最新文章</h2>
-        
-        {% for post in site.posts %}
-        <article class="post-preview">
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p class="post-meta">{{ post.date | date: "%Y年%m月%d日" }}</p>
-            {% if post.excerpt %}
-                <p class="excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
-            {% endif %}
-            <a href="{{ post.url | relative_url }}" class="read-more">阅读全文 →</a>
-        </article>
-        {% endfor %}
-        
-        {% if site.posts.size == 0 %}
-        <p>还没有文章，敬请期待...</p>
-        {% endif %}
-    </main>
-</div>
+## 欢迎来到我的博客
+
+记录想法、观察世界与自我成长。
+
+
