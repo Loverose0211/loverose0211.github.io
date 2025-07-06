@@ -131,4 +131,4 @@ defaults:
 
 # 中文字体优化
 typography:
-  font_family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif
+  font_family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif"
