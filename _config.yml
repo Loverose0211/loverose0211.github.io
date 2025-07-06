@@ -24,7 +24,7 @@ plugins:
 author:
   name             : "Rowan"
   avatar           : # "/assets/images/bio-photo.jpg"  # 如果没有头像就注释掉
-  bio              : "一个正在学习计算机科学的高中生"
+  bio              : "一个CS和自动化的爱好者"
   location         : "Somewhere"
   email            :
   links:
